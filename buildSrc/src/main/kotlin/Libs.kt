@@ -7,6 +7,18 @@ import kotlin.String
  *   `$ ./gradlew syncLibs`
  * to update this file */
 object Libs {
+    const val navigation_fragment_ktx: String =
+            "android.arch.navigation:navigation-fragment-ktx:" + Versions.android_arch_navigation
+
+    const val navigation_safe_args_gradle_plugin: String =
+            "android.arch.navigation:navigation-safe-args-gradle-plugin:" + Versions.android_arch_navigation
+
+    const val navigation_testing: String =
+            "android.arch.navigation:navigation-testing:" + Versions.android_arch_navigation
+
+    const val navigation_ui_ktx: String =
+            "android.arch.navigation:navigation-ui-ktx:" + Versions.android_arch_navigation
+
     /**
      * [appcompat website](http://developer.android.com/tools/extras/support-library.html) */
     const val appcompat: String = "androidx.appcompat:appcompat:" + Versions.appcompat
@@ -20,6 +32,20 @@ object Libs {
      * [lifecycle-extensions website](https://developer.android.com/topic/libraries/architecture/index.html) */
     const val lifecycle_extensions: String =
             "androidx.lifecycle:lifecycle-extensions:" + Versions.lifecycle_extensions
+
+    /**
+     * [room-compiler website](https://developer.android.com/topic/libraries/architecture/index.html) */
+    const val room_compiler: String = "androidx.room:room-compiler:" + Versions.androidx_room
+
+    const val room_coroutines: String = "androidx.room:room-coroutines:" + Versions.androidx_room
+
+    /**
+     * [room-runtime website](https://developer.android.com/topic/libraries/architecture/index.html) */
+    const val room_runtime: String = "androidx.room:room-runtime:" + Versions.androidx_room
+
+    /**
+     * [room-testing website](https://developer.android.com/topic/libraries/architecture/index.html) */
+    const val room_testing: String = "androidx.room:room-testing:" + Versions.androidx_room
 
     /**
      * [espresso-core website](https://developer.android.com/testing) */
@@ -39,8 +65,28 @@ object Libs {
      * [lint-gradle website](https://developer.android.com/studio) */
     const val lint_gradle: String = "com.android.tools.lint:lint-gradle:" + Versions.lint_gradle
 
+    /**
+     * [dagger-android-processor website](https://github.com/google/dagger) */
+    const val dagger_android_processor: String =
+            "com.google.dagger:dagger-android-processor:" + Versions.com_google_dagger
+
+    /**
+     * [dagger-android-support website](https://github.com/google/dagger) */
+    const val dagger_android_support: String =
+            "com.google.dagger:dagger-android-support:" + Versions.com_google_dagger
+
+    /**
+     * [dagger-android website](https://github.com/google/dagger) */
+    const val dagger_android: String =
+            "com.google.dagger:dagger-android:" + Versions.com_google_dagger
+
+    /**
+     * [dagger-compiler website](https://github.com/google/dagger) */
+    const val dagger_compiler: String =
+            "com.google.dagger:dagger-compiler:" + Versions.com_google_dagger
+
     const val jmfayard_github_io_gradle_kotlin_dsl_libs_gradle_plugin: String =
-            "jmfayard.github.io.gradle-kotlin-dsl-libs.gradle.plugin:" + Versions.jmfayard_github_io_gradle_kotlin_dsl_libs_gradle_plugin
+            "jmfayard.github.io.gradle-kotlin-dsl-libs:jmfayard.github.io.gradle-kotlin-dsl-libs.gradle.plugin:" + Versions.jmfayard_github_io_gradle_kotlin_dsl_libs_gradle_plugin
 
     /**
      * [junit website](http://junit.org) */
@@ -50,6 +96,11 @@ object Libs {
      * [kotlin-android-extensions website](https://kotlinlang.org/) */
     const val kotlin_android_extensions: String =
             "org.jetbrains.kotlin:kotlin-android-extensions:" + Versions.org_jetbrains_kotlin
+
+    /**
+     * [kotlin-annotation-processing-gradle website](https://kotlinlang.org/) */
+    const val kotlin_annotation_processing_gradle: String =
+            "org.jetbrains.kotlin:kotlin-annotation-processing-gradle:" + Versions.org_jetbrains_kotlin
 
     /**
      * [kotlin-gradle-plugin website](https://kotlinlang.org/) */

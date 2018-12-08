@@ -7,11 +7,20 @@ import kotlin.String
  *
  * YOU are responsible for updating manually the dependency version. */
 object Versions {
+    const val android_arch_navigation: String = "1.0.0-alpha08" 
+            /* Could not find any version that matches android.arch.navigation:navigation-fragment-ktx:+.
+            Versions rejected by component selection rules:
+              - 1.0.0-alpha08
+              - 1.0.0-alpha07 
+            .... */
+
     const val appcompat: String = "1.1.0-alpha01" // exceed the version found: 1.0.2
 
     const val constraintlayout: String = "2.0.0-alpha2" // exceed the version found: 1.1.3
 
     const val lifecycle_extensions: String = "2.0.0" 
+
+    const val androidx_room: String = "2.1.0-alpha03" // exceed the version found: 2.0.0
 
     const val espresso_core: String = "3.1.1-alpha01" // exceed the version found: 3.1.0
 
@@ -21,6 +30,8 @@ object Versions {
             "3.3.0-beta04" // exceed the version found: 3.2.1
 
     const val lint_gradle: String = "26.3.0-beta04" // exceed the version found: 26.2.1
+
+    const val com_google_dagger: String = "2.19" //available: "2.19"
 
     const val jmfayard_github_io_gradle_kotlin_dsl_libs_gradle_plugin: String = "0.2.6" 
 

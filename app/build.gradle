@@ -74,6 +74,9 @@ dependencies {
     // Anko common
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
 
+    // KTX core
+    implementation "androidx.core:core-ktx:$ktx_version"
+
     // Mock
     testImplementation "org.mockito:mockito-core:$mockito_version"
     androidTestImplementation "org.mockito:mockito-android:$mockito_version"

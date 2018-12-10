@@ -2,17 +2,15 @@ package com.teaml.timemanagment.ui.base
 
 import android.content.Context
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.LayoutRes
-import androidx.core.content.getSystemService
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import dagger.android.support.DaggerAppCompatActivity
 
 abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel> : DaggerAppCompatActivity() {
 
-    protected lateinit var viewDataBinding: T
+    protected lateinit var binding: T
     private var viewModel: V? = null
 
     /**
@@ -41,9 +39,9 @@ abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel> : DaggerAppC
 
     private fun performDataBinding() {
         val viewModel = viewModel ?: getViewModel()
-        viewDataBinding = DataBindingUtil.setContentView(this, getLayoutId())
-        viewDataBinding.setVariable(getBindingVariable(), viewModel)
-        viewDataBinding.executePendingBindings()
+        binding = DataBindingUtil.setContentView(this, getLayoutId())
+        binding.setVariable(getBindingVariable(), viewModel)
+        binding.executePendingBindings()
     }
 
     fun hideKeyboard() {

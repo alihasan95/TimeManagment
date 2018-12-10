@@ -1,8 +1,8 @@
 package com.teaml.timemanagment.ui.main
 
 import androidx.lifecycle.ViewModel
-import javax.inject.Inject
+import com.teaml.timemanagment.ui.base.BaseViewModel
 
-class MainViewModel @Inject constructor() : ViewModel() {
+class MainViewModel : BaseViewModel() {
 
 }

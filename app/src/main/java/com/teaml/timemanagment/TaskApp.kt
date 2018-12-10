@@ -1,6 +1,7 @@
 package com.teaml.timemanagment
 
 import android.app.Application
+import com.teaml.timemanagment.di.component.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 

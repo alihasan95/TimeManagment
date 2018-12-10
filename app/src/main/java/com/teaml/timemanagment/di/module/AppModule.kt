@@ -17,10 +17,10 @@ class AppModule {
         return app.applicationContext
     }
 
-    @Provides
+   /* @Provides
     @Singleton
     fun provideAppDatabase(context: Context): AppDatabase {
         // TODO Use AppConstants later
         return Room.databaseBuilder(context, AppDatabase::class.java, "tasks").build()
-    }
+    }*/
 }

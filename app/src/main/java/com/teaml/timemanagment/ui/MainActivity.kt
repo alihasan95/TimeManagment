@@ -1,4 +1,4 @@
-package com.teaml.timemanagment
+package com.teaml.timemanagment.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

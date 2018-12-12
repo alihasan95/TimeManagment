@@ -43,7 +43,7 @@ class AppModule {
 
     @Provides
     @PreferencesInfo
-    fun providePreferncesFileName(): String {
+    fun providePreferencesFileName(): String {
         return PREF_FILE_NAME
     }
 }

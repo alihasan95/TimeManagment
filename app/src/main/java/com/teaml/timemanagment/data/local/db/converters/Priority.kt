@@ -1,6 +1,8 @@
 package com.teaml.timemanagment.data.local.db.converters
 
 enum class Priority {
-    High,
-    Low
+    VERY_HIGH,
+    HIGH,
+    NORMAL,
+    LOW
 }

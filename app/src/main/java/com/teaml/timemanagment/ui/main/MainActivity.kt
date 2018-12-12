@@ -2,6 +2,7 @@ package com.teaml.timemanagment.ui.main
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
 import com.teaml.timemanagment.BR
 import com.teaml.timemanagment.R
 import com.teaml.timemanagment.databinding.MainActivityBinding
@@ -23,5 +24,8 @@ class MainActivity : BaseActivity<MainActivityBinding, MainViewModel>() {
 
     override fun getViewModel(): MainViewModel = mainViewModel
 
+    override fun onSupportNavigateUp(): Boolean {
+        return findNavController(R.id.nav_host_fragment).navigateUp()
+    }
 
 }

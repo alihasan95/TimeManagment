@@ -9,7 +9,7 @@ import javax.inject.Singleton
 
 
 @Singleton
-class DataRepository @Inject constructor(
+class TaskRepository @Inject constructor(
     val taskDao: TaskDao,
     val pref: PreferencesHelper
 ) {

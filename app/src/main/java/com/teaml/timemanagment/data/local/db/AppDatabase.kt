@@ -8,7 +8,7 @@ import com.teaml.timemanagment.data.local.db.converters.PriorityTypeConverters
 import com.teaml.timemanagment.data.local.db.dao.TaskDao
 import com.teaml.timemanagment.data.model.db.Task
 
-@Database(entities = [Task::class], version = 1)
+@Database(entities = [Task::class], version = 1, exportSchema = false)
 @TypeConverters(PriorityTypeConverters::class)
 abstract class AppDatabase : RoomDatabase() {
 

@@ -28,9 +28,13 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_add_black_24dp" />
-                            <entry key="sourceFile" value="C:\Users\mahmo" />
+                            <entry key="height" value="759" />
+                            <entry key="outputName" value="ic_add_task" />
+                            <entry key="overrideSize" value="true" />
+                            <entry key="sourceFile" value="C:\Users\mahmo\Documents\Adobe\XD\Memories\UI\undraw_Specs_h9jt.svg" />
+                            <entry key="width" value="887" />
                           </map>
                         </option>
                       </PersistentState>

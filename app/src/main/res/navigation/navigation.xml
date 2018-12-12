@@ -9,5 +9,14 @@
             android:id="@+id/homeFragment"
             android:name="com.teaml.timemanagment.ui.main.home.HomeFragment"
             android:label="HomeFragment"
-            tools:layout="@layout/fragment_home"/>
+            tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.teaml.timemanagment.ui.main.add.AddFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_add"/>
 </navigation>

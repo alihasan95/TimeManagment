@@ -8,8 +8,7 @@ import com.teaml.timemanagment.data.model.db.Task
 @Dao
 interface TaskDao : BaseDao<Task> {
 
-    @Query("SELECT * FROM task ORDER BY task_id DESC")
+    @Query("SELECT * FROM task ORDER BY priority DESC")
     fun loadTasks(): LiveData<List<Task>>
-
 
 }

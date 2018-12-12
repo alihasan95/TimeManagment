@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- theme colors -->
     <color name="colorPrimary">#344955</color>
-    <color name="colorPrimaryDark">#222E33</color>
+    <color name="colorPrimaryDark">#9C9C9C</color>
     <color name="colorAccent">#F9AA33</color>
+
+    <!-- priority colors -->
+    <color name="colorPriorityVeryHigh">#CDFF90</color>
+    <color name="colorPriorityHigh">#FFF476</color>
+    <color name="colorPriorityNormal">#FABD03</color>
+    <color name="colorPriorityLow">#F18A81</color>
+
 </resources>

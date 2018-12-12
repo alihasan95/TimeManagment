@@ -13,5 +13,8 @@ class AppPreferencesHelper @Inject constructor(
 ) : PreferencesHelper {
 
 
+    private companion object {
+
+    }
 
 }

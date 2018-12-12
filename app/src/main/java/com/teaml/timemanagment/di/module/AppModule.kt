@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.teaml.timemanagment.TaskApp
 import com.teaml.timemanagment.data.local.db.AppDatabase
+import com.teaml.timemanagment.data.local.db.dao.TaskDao
 import com.teaml.timemanagment.data.local.prefs.AppPreferencesHelper
 import com.teaml.timemanagment.data.local.prefs.PreferencesHelper
 import com.teaml.timemanagment.di.custom.PreferencesInfo
@@ -25,13 +26,18 @@ class AppModule {
     @Provides
     @Singleton
     fun provideAppDatabase(context: Context): AppDatabase {
-        // TODO Use AppConstants later
         return Room.databaseBuilder(context, AppDatabase::class.java, APP_DB_NAME).build()
     }
 
     @Provides
     @Singleton
-    fun providePreferncesHelper(appPreferencesHelper: AppPreferencesHelper): PreferencesHelper {
+    fun provideTaskDao(appDatabase: AppDatabase): TaskDao {
+        return appDatabase.taskDao()
+    }
+
+    @Provides
+    @Singleton
+    fun providePreferencesHelper(appPreferencesHelper: AppPreferencesHelper): PreferencesHelper {
         return appPreferencesHelper
     }
 

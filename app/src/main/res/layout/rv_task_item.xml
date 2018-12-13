@@ -17,9 +17,10 @@
         android:layout_marginStart="@dimen/medium_padding"
         android:layout_marginTop="@dimen/medium_padding"
         android:layout_marginEnd="@dimen/medium_padding"
-        app:cardBackgroundColor="@color/colorPriorityVeryHigh"
         app:cardCornerRadius="4dp"
-        app:cardElevation="0dp">
+        app:cardElevation="0dp"
+        app:setPriorityColor="@{task.priority}"
+        tools:cardBackgroundColor="@color/colorPriorityVeryHigh">
 
         <TextView
             android:id="@+id/text_task"

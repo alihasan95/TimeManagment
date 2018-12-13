@@ -11,7 +11,7 @@ import com.teaml.timemanagment.ui.base.BaseViewHolder
 import timber.log.Timber
 import javax.inject.Inject
 
-class RvHomeAdapter @Inject constructor(private val list: List<Task>) : RecyclerView.Adapter<BaseViewHolder>() {
+class RvHomeAdapter @Inject constructor(private val list: MutableList<Task>) : RecyclerView.Adapter<BaseViewHolder>() {
 
     companion object {
         private const val EMPTY_ITEM = 1
@@ -41,6 +41,12 @@ class RvHomeAdapter @Inject constructor(private val list: List<Task>) : Recycler
 
     override fun getItemViewType(position: Int): Int =
         if (list.isEmpty()) EMPTY_ITEM else TASK_ITEM
+
+    fun addTasks(tasks: List<Task>) {
+        list.clear()
+        list.addAll(tasks)
+        notifyDataSetChanged()
+    }
 
     inner class TaskViewHolder(private val rvItemTaskBinding: RvTaskItemBinding) :
         BaseViewHolder(rvItemTaskBinding.root) {

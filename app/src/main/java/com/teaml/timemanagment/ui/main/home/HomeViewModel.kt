@@ -9,11 +9,15 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(val repository: TaskRepository) : BaseViewModel() {
 
     private val _onAddTaskClick = SingleLiveEvent<Any>()
-
     val onAddTaskClick: LiveData<Any> =
         _onAddTaskClick
+
+    val tasks = repository.loadTasks()
+
 
     fun onAddTaskClick() {
         _onAddTaskClick.call()
     }
+
+
 }

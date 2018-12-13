@@ -10,8 +10,8 @@ class HomeFragmentModule {
 
     @Provides
     fun provideRvHomeAdapter(): RvHomeAdapter {
-        val list = listOf(Task(1, "first task", Priority.HIGH))
-        return RvHomeAdapter(list)
-        //return RvHomeAdapter(listOf())
+        //val list = mutableListOf(Task(1, "first task", Priority.HIGH))
+        //return RvHomeAdapter(list)
+        return RvHomeAdapter(mutableListOf())
     }
 }

@@ -25,16 +25,17 @@
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bar"
             android:layout_width="match_parent"
-            android:layout_height="57dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            app:backgroundTint="?attr/colorPrimary" />
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+            app:hideOnScroll="true" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_anchor="@id/bar"
             android:onClick="@{() -> viewModel.onAddTaskClick() }"
+            app:layout_anchor="@id/bar"
             app:layout_anchorGravity="top|center_horizontal"
             app:srcCompat="@drawable/ic_add_24dp" />
 

@@ -2,6 +2,6 @@
 <resources>
     <dimen name="medium_padding">8dp</dimen>
     <dimen name="wide_padding">16dp</dimen>
-    <dimen name="img_no_task_hight">200dp</dimen>
+    <dimen name="img_no_task_height">200dp</dimen>
     <dimen name="add_illustration_image_height">200dp</dimen>
 </resources>

@@ -6,6 +6,7 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.teaml.timemanagment.BR
 import com.teaml.timemanagment.R
@@ -42,10 +43,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
@@ -55,6 +52,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     private fun subscribeUi() {
         observe(homeViewModel.onAddTaskClick) {
             findNavController().navigate(R.id.action_homeFragment_to_addFragment)
+        }
+
+        observe(homeViewModel.tasks) { tasks ->
+            tasks?.let { adapter.addTasks(it) }
         }
     }
 

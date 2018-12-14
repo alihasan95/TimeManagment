@@ -20,6 +20,7 @@
         app:cardCornerRadius="4dp"
         app:cardElevation="0dp"
         app:setPriorityColor="@{task.priority}"
+        android:background="?android:attr/selectableItemBackground"
         tools:cardBackgroundColor="@color/colorPriorityVeryHigh">
 
         <TextView

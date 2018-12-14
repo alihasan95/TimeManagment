@@ -52,6 +52,7 @@
             android:id="@+id/add_illustration_image"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/add_illustration_image_height"
+            android:padding="@dimen/wide_padding"
             android:contentDescription="@null"
             android:scaleType="fitEnd"
             app:layout_constraintBottom_toBottomOf="parent"

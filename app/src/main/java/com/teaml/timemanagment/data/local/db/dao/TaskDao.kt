@@ -9,13 +9,13 @@ import androidx.room.Query
 import com.teaml.timemanagment.data.model.db.Task
 
 @Dao
-interface TaskDao : BaseDao<Task> {
+interface TaskDao {
 
     @Query("SELECT * FROM task ORDER BY priority, task_id DESC")
     fun loadTasks(): LiveData<List<Task>>
 
     @Query("SELECT * FROM task WHERE task_id = :taskId")
-    fun loadTaskById(taskId: Int): Task
+    fun loadTaskById(taskId: Int): LiveData<Task>
 
     @Delete
     suspend fun delete(task: Task)

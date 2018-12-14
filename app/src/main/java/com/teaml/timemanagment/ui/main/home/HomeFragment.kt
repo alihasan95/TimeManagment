@@ -41,6 +41,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
         binding.recyclerView.layoutManager = LinearLayoutManager(context!!)
         binding.recyclerView.adapter = adapter
 
+        adapter.setOnItemClickListener { taskId ->
+
+            val actionHomeFragmentToAddFragment =
+                HomeFragmentDirections.actionHomeFragmentToAddFragment()
+            actionHomeFragmentToAddFragment.setTaskId(taskId)
+            findNavController().navigate(actionHomeFragmentToAddFragment)
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

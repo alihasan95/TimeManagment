@@ -11,12 +11,15 @@ import com.teaml.timemanagment.ui.base.BaseViewHolder
 import timber.log.Timber
 import javax.inject.Inject
 
-class RvHomeAdapter @Inject constructor(private val list: MutableList<Task>) : RecyclerView.Adapter<BaseViewHolder>() {
+class RvHomeAdapter @Inject constructor(private val list: MutableList<Task>) :
+    RecyclerView.Adapter<BaseViewHolder>() {
 
     companion object {
         private const val EMPTY_ITEM = 1
         private const val TASK_ITEM = 2
     }
+
+    private var onItemClickListener: ((Int) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -24,13 +27,17 @@ class RvHomeAdapter @Inject constructor(private val list: MutableList<Task>) : R
         Timber.i("onCreateViewHolder typeId %d", viewType)
 
         return if (viewType == TASK_ITEM) {
-            val binding = RvTaskItemBinding.inflate(inflater, parent,
-                false)
+            val binding = RvTaskItemBinding.inflate(
+                inflater, parent,
+                false
+            )
             TaskViewHolder(binding)
         } else {
-            val binding = RvEmptyItemBinding.inflate(inflater, parent,
-                false)
-             EmptyViewHolder(binding)
+            val binding = RvEmptyItemBinding.inflate(
+                inflater, parent,
+                false
+            )
+            EmptyViewHolder(binding)
         }
 
     }
@@ -48,8 +55,19 @@ class RvHomeAdapter @Inject constructor(private val list: MutableList<Task>) : R
         notifyDataSetChanged()
     }
 
+    fun setOnItemClickListener(onItemClickListener: (taskId: Int) -> Unit) {
+        this.onItemClickListener = onItemClickListener
+    }
+
     inner class TaskViewHolder(private val rvItemTaskBinding: RvTaskItemBinding) :
         BaseViewHolder(rvItemTaskBinding.root) {
+
+        init {
+            rvItemTaskBinding.root.setOnClickListener {
+                val taskId = list[adapterPosition].taskId
+                this@RvHomeAdapter.onItemClickListener?.invoke(taskId)
+            }
+        }
 
         override fun onBind(position: Int) {
             rvItemTaskBinding.task = list[position]
@@ -58,7 +76,7 @@ class RvHomeAdapter @Inject constructor(private val list: MutableList<Task>) : R
     }
 
     inner class EmptyViewHolder(rvEmptyItemBinding: RvEmptyItemBinding) :
-            BaseViewHolder(rvEmptyItemBinding.root) {
+        BaseViewHolder(rvEmptyItemBinding.root) {
 
         override fun onBind(position: Int) {
 

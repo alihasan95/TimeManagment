@@ -27,8 +27,10 @@ class TaskDaoTest : DbTest() {
     @Test
     fun testOrderOfTasks() {
 
+        // When
         val tasks = getValue(appDb.taskDao().loadTasks())
 
+        // Then
         // Test order of tasks
         assertThat(tasks[0].title, `is`("taskVeryHigh"))
         assertThat(tasks[1].title, `is`("taskHigh"))
@@ -38,8 +40,9 @@ class TaskDaoTest : DbTest() {
 
     @Test
     fun testLoadTaskById() {
-        val task = appDb.taskDao().loadTaskById(1)
-
+        // When
+        val task = getValue(appDb.taskDao().loadTaskById(1))
+        // Then
         assertThat(task.taskId, `is`(1))
         assertThat(task.title, `is`("taskLow"))
 
@@ -47,26 +50,29 @@ class TaskDaoTest : DbTest() {
 
     @Test
     fun testOnConflictInsert() = runBlocking {
+        // When
         appDb.taskDao().insert(Task("conflictTask", Priority.VERY_HIGH, 1))
-
         val tasks = getValue(appDb.taskDao().loadTasks())
 
+        // Then
         assertThat(tasks.size, `is`(DEFAULT_TASK_SIZE))
     }
 
     @Test
     fun testDeleteTask() = runBlocking {
-
+        // Given
         val taskDao = appDb.taskDao()
         val task = Task("delete", Priority.LOW, 5)
+
         taskDao.insert(task)
 
         val tasksBeforeDelete = getValue(taskDao.loadTasks())
         assertThat(tasksBeforeDelete.size, equalTo(DEFAULT_TASK_SIZE + 1))
 
-        // delete task
+        // When
         taskDao.delete(task)
 
+        // Then
         val tasksAfterDelete = getValue(taskDao.loadTasks())
         assertThat(tasksAfterDelete.size, equalTo(DEFAULT_TASK_SIZE))
     }

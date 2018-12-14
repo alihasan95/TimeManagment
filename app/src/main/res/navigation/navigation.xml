@@ -8,15 +8,24 @@
     <fragment
             android:id="@+id/homeFragment"
             android:name="com.teaml.timemanagment.ui.main.home.HomeFragment"
-            android:label="HomeFragment"
+            android:label=" "
             tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_addFragment"
-            app:destination="@id/addFragment" />
+            app:destination="@id/addFragment" >
+            <argument
+                android:name="taskId"
+                android:defaultValue="0" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/addFragment"
         android:name="com.teaml.timemanagment.ui.main.add.AddFragment"
         android:label=" "
-        tools:layout="@layout/fragment_add"/>
+        tools:layout="@layout/fragment_add">
+        <argument
+            android:name="taskId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>

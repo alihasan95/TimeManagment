@@ -14,4 +14,12 @@
         <item name="android:windowBackground">@drawable/splash_background</item>
     </style>
 
+    <style name="ExtendedFabStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
 </resources>

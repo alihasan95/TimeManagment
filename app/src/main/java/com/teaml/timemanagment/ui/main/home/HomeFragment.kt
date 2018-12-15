@@ -3,6 +3,7 @@ package com.teaml.timemanagment.ui.main.home
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
@@ -12,6 +13,7 @@ import com.teaml.timemanagment.BR
 import com.teaml.timemanagment.R
 import com.teaml.timemanagment.databinding.FragmentHomeBinding
 import com.teaml.timemanagment.ui.base.BaseFragment
+import com.teaml.timemanagment.utils.SpaceItemDecoration
 import com.teaml.timemanagment.utils.extension.observe
 import com.teaml.timemanagment.utils.extension.obtainViewModel
 import timber.log.Timber
@@ -40,6 +42,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
         super.onViewCreated(view, savedInstanceState)
         binding.recyclerView.layoutManager = LinearLayoutManager(context!!)
         binding.recyclerView.adapter = adapter
+
+
+        binding.recyclerView.addItemDecoration(SpaceItemDecoration())
 
         adapter.setOnItemClickListener { taskId ->
 

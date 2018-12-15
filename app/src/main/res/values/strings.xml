@@ -9,4 +9,6 @@
     <string name="follow_us">تابعونا على</string>
     <string name="developed_by_team_l">Developed by Team_L</string>
     <string name="delete_task">Delete Task</string>
+    <string name="my_task">My Task</string>
+    <string name="add_task">Add Task</string>
 </resources>

@@ -16,29 +16,42 @@
         android:layout_height="match_parent"
         tools:context=".ui.main.MainActivity">
 
+        <TextView
+            android:id="@+id/my_task_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/wide_padding"
+            android:text="@string/my_task"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/rv_task_item"
-            />
+            android:layout_marginTop="?attr/actionBarSize"
+            tools:listitem="@layout/rv_task_item" />
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bar"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
-            app:hideOnScroll="true" />
+            android:layout_gravity="bottom" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/ExtendedFabStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="@{() -> viewModel.onAddTaskClick() }"
+            android:text="@string/add_task"
+            app:cornerRadius="@dimen/extended_fab_radius"
+            app:icon="@drawable/ic_add_24dp"
+            app:iconTint="@android:color/black"
             app:layout_anchor="@id/bar"
-            app:layout_anchorGravity="top|center_horizontal"
-            app:srcCompat="@drawable/ic_add_24dp" />
+            app:layout_anchorGravity="center_horizontal" />
+
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

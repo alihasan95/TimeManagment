@@ -14,14 +14,14 @@
         android:id="@+id/card_task"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/medium_padding"
-        android:layout_marginTop="@dimen/medium_padding"
-        android:layout_marginEnd="@dimen/medium_padding"
+        android:background="?android:attr/selectableItemBackground"
         app:cardCornerRadius="4dp"
         app:cardElevation="0dp"
         app:setPriorityColor="@{task.priority}"
-        android:background="?android:attr/selectableItemBackground"
-        tools:cardBackgroundColor="@color/colorPriorityVeryHigh">
+        tools:cardBackgroundColor="@color/colorPriorityVeryHigh"
+        tools:layout_margigBottom="8dp"
+        tools:layout_marginStart="8dp"
+        tools:layout_marginEnd="8dp">
 
         <TextView
             android:id="@+id/text_task"

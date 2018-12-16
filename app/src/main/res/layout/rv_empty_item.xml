@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
     </data>
 
     <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:gravity="center"
-            android:layout_height="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/img_no_task_height"
-                app:srcCompat="@drawable/ic_no_task"
-                android:contentDescription="@string/no_tasks"/>
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/img_no_task_height"
+            android:contentDescription="@string/no_tasks"
+            app:srcCompat="@drawable/ic_no_task" />
 
         <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/no_tasks"
-                android:paddingTop="@dimen/wide_padding"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/wide_padding"
+            android:text="@string/no_tasks"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
 
     </LinearLayout>
 </layout>

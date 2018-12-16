@@ -1,5 +1,7 @@
 package com.teaml.timemanagment.di.module
 
+import com.teaml.timemanagment.ui.main.about.AboutFragment
+import com.teaml.timemanagment.ui.main.about.AboutFragmentModule
 import com.teaml.timemanagment.ui.main.add.AddFragment
 import com.teaml.timemanagment.ui.main.add.AddFragmentModule
 import com.teaml.timemanagment.ui.main.home.HomeFragment
@@ -15,5 +17,8 @@ abstract class FragmentBuildersModule {
 
     @ContributesAndroidInjector(modules = [AddFragmentModule::class])
     abstract fun contributeAddFragment(): AddFragment
+
+    @ContributesAndroidInjector(modules = [AboutFragmentModule::class])
+    abstract fun contributeAboutFragment(): AboutFragment
 
 }

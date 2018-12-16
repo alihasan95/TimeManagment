@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.teaml.timemanagment.TaskViewModelFactory
 import com.teaml.timemanagment.di.custom.ViewModelKey
 import com.teaml.timemanagment.ui.main.MainViewModel
+import com.teaml.timemanagment.ui.main.about.AboutViewModel
 import com.teaml.timemanagment.ui.main.add.AddViewModel
 import com.teaml.timemanagment.ui.main.home.HomeViewModel
 import dagger.Binds
@@ -28,6 +29,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(AddViewModel::class)
     abstract fun bindAddViewModel(addViewModel: AddViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(AboutViewModel::class)
+    abstract fun bindAboutViewModel(aboutViewModel: AboutViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: TaskViewModelFactory): ViewModelProvider.Factory

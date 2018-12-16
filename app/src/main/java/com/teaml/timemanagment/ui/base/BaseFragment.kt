@@ -14,7 +14,7 @@ abstract class BaseFragment<T : ViewDataBinding, V : BaseViewModel> : DaggerFrag
 
     protected lateinit var binding: T
     private lateinit var viewModel: V
-    private var baseActivity: BaseActivity<*, *>? = null
+    protected var baseActivity: BaseActivity<*, *>? = null
 
     /**
      * override to set layout resource

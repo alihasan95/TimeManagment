@@ -28,7 +28,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="?attr/actionBarSize"
             tools:listitem="@layout/rv_task_item" />
 
@@ -37,8 +37,9 @@
             style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
             android:layout_gravity="bottom" />
-
 
         <com.google.android.material.button.MaterialButton
             style="@style/ExtendedFabStyle"

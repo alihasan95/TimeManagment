@@ -2,11 +2,17 @@ package com.teaml.timemanagment.ui.main.home
 
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.teaml.timemanagment.BR
@@ -38,8 +44,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
     override fun getBindingVariable(): Int = BR.viewModel
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.recyclerView.layoutManager = LinearLayoutManager(context!!)
         binding.recyclerView.adapter = adapter
 
@@ -57,6 +69,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        // setup navigation controller
+        val appCompatActivity = activity as AppCompatActivity
+        appCompatActivity.setSupportActionBar(binding.bar)
 
         subscribeUi()
     }
@@ -71,5 +86,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_home, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean =
+        NavigationUI.onNavDestinationSelected(item, findNavController())
+                || super.onOptionsItemSelected(item)
 }

@@ -12,7 +12,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.teaml.timemanagment.R
 import com.teaml.timemanagment.databinding.AboutFragmentBinding
 import com.teaml.timemanagment.ui.base.BaseFragment
+import com.teaml.timemanagment.utils.extension.observe
 import com.teaml.timemanagment.utils.extension.obtainViewModel
+import org.jetbrains.anko.browse
 import javax.inject.Inject
 
 class AboutFragment : BaseFragment<AboutFragmentBinding,AboutViewModel>() {
@@ -30,6 +32,12 @@ class AboutFragment : BaseFragment<AboutFragmentBinding,AboutViewModel>() {
 
     override fun getBindingVariable(): Int = BR.viewModel
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        observe(aboutViewModel.followAsLiveData) {
+            activity?.browse(it.toString(), true)
+        }
+    }
 
 
 }

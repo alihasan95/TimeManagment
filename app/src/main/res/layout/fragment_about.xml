@@ -49,14 +49,12 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imgAppIcon"/>
-
-            <!--android:text='@{String.format(@string/app_version,  buildConfig.VERSION_NAME )}'-->
             <TextView
                     android:id="@+id/txtAppVersion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-
+                    android:text='@{String.format(@string/app_version,  buildConfig.VERSION_NAME )}'
                     android:textAppearance="?attr/textAppearanceBody1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -74,23 +72,23 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtAppVersion"/>
 
-            <!--android:onClick="@{() -> viewModel.onFacebookIconClick()}"-->
             <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:id="@+id/imgFacebook"
-
+                    style="@style/CommunicationIconStyle"
+                    android:onClick="@{() -> viewModel.onFacebookIconClick()}"
                     android:src="@drawable/facebook_circle_color1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/imgTelegram"
                     app:layout_constraintTop_toBottomOf="@+id/txtFollowUs"/>
 
-            <!--android:onClick="@{() -> viewModel.onTelegramIconClick()}"-->
             <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
                     android:id="@+id/imgTelegram"
-
+                    style="@style/CommunicationIconStyle"
+                    android:onClick="@{() -> viewModel.onTelegramIconClick()}"
                     android:src="@drawable/telegram_logo_circle"
                     app:layout_constraintEnd_toStartOf="@id/imgFacebook"
                     app:layout_constraintHorizontal_chainStyle="packed"

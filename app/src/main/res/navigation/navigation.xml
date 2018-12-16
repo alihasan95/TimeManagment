@@ -28,4 +28,8 @@
             app:argType="integer"
             android:defaultValue="0" />
     </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.teaml.timemanagment.ui.main.about.AboutFragment"
+        android:label="AboutFragment" />
 </navigation>

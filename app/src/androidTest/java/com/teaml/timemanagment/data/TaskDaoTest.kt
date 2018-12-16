@@ -19,13 +19,14 @@ class TaskDaoTest : DbTest() {
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
     @Test
-    fun testGetTasks() {
+    fun getAllTasks() {
         val tasks = getValue(appDb.taskDao().loadTasks())
         assertThat(tasks.size, equalTo(DEFAULT_TASK_SIZE))
     }
 
+
     @Test
-    fun testOrderOfTasks() {
+    fun orderOfTasks() {
 
         // When
         val tasks = getValue(appDb.taskDao().loadTasks())
@@ -39,7 +40,7 @@ class TaskDaoTest : DbTest() {
     }
 
     @Test
-    fun testLoadTaskById() {
+    fun getTaskById() {
         // When
         val task = getValue(appDb.taskDao().loadTaskById(1))
         // Then
@@ -49,7 +50,7 @@ class TaskDaoTest : DbTest() {
     }
 
     @Test
-    fun testOnConflictInsert() = runBlocking {
+    fun onConflictInsert() = runBlocking {
         // When
         appDb.taskDao().insert(Task("conflictTask", Priority.VERY_HIGH, 1))
         val tasks = getValue(appDb.taskDao().loadTasks())
@@ -59,17 +60,13 @@ class TaskDaoTest : DbTest() {
     }
 
     @Test
-    fun testDeleteTask() = runBlocking {
+    fun deleteTask() = runBlocking {
         // Given
         val taskDao = appDb.taskDao()
         val task = Task("delete", Priority.LOW, 5)
 
-        taskDao.insert(task)
-
-        val tasksBeforeDelete = getValue(taskDao.loadTasks())
-        assertThat(tasksBeforeDelete.size, equalTo(DEFAULT_TASK_SIZE + 1))
-
         // When
+        taskDao.insert(task)
         taskDao.delete(task)
 
         // Then

@@ -18,5 +18,6 @@
     <!-- add fragment -->
     <string name="delete_task">Delete Task</string>
     <string name="about_us">About Us</string>
+    <string name="about">About</string>
 
 </resources>

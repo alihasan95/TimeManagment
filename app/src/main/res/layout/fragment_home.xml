@@ -37,9 +37,10 @@
             style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:navigationIcon="@drawable/ic_menu_24dp"
             android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
-            android:layout_gravity="bottom" />
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
 
         <com.google.android.material.button.MaterialButton
             style="@style/ExtendedFabStyle"

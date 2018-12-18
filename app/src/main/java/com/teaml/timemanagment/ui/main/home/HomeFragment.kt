@@ -7,24 +7,19 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.teaml.timemanagment.BR
 import com.teaml.timemanagment.R
 import com.teaml.timemanagment.databinding.FragmentHomeBinding
 import com.teaml.timemanagment.ui.base.BaseFragment
+import com.teaml.timemanagment.ui.main.homemenu.BottomNavigationViewDialogFragment
 import com.teaml.timemanagment.utils.SpaceItemDecoration
 import com.teaml.timemanagment.utils.extension.observe
 import com.teaml.timemanagment.utils.extension.obtainViewModel
-import timber.log.Timber
 import javax.inject.Inject
-import javax.inject.Provider
 
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
@@ -65,6 +60,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
             actionHomeFragmentToAddFragment.setTaskId(taskId)
             findNavController().navigate(actionHomeFragmentToAddFragment)
         }
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -72,6 +68,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
         // setup navigation controller
         val appCompatActivity = activity as AppCompatActivity
         appCompatActivity.setSupportActionBar(binding.bar)
+
+
+        binding.bar.setNavigationOnClickListener {
+            val bottomNavigationViewDialogFragment = BottomNavigationViewDialogFragment()
+            bottomNavigationViewDialogFragment.show(
+                appCompatActivity.supportFragmentManager,
+                BottomNavigationViewDialogFragment.TAG
+            )
+        }
 
         subscribeUi()
     }
@@ -84,6 +89,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
         observe(homeViewModel.tasks) { tasks ->
             tasks?.let { adapter.addTasks(it) }
         }
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

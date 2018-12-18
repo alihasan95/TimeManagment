@@ -15,13 +15,9 @@
         android:layout_height="match_parent"
         tools:context=".ui.main.add.AddFragment">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <include
+            android:id="@+id/toolbar_layout"
+            layout="@layout/toolbar" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/title_edit"
@@ -34,7 +30,7 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+            app:layout_constraintTop_toBottomOf="@id/toolbar_layout" />
 
         <Spinner
             android:id="@+id/priority_spinner"
@@ -52,8 +48,8 @@
             android:id="@+id/add_illustration_image"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/add_illustration_image_height"
-            android:padding="@dimen/wide_padding"
             android:contentDescription="@null"
+            android:padding="@dimen/wide_padding"
             android:scaleType="fitEnd"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

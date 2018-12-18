@@ -29,15 +29,19 @@
             android:background="?android:attr/colorBackground"
             tools:context="com.teaml.prayer.ui.main.about.AboutFragment">
 
+            <include
+                android:id="@+id/toolbar_layout"
+                layout="@layout/toolbar" />
+
             <ImageView
                 android:id="@+id/imgAppIcon"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginTop="64dp"
-                android:src="@mipmap/ic_launcher"
+                android:layout_marginTop="32dp"
+                android:src="@mipmap/ic_launcher_dark"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/toolbar_layout" />
 
             <TextView
                 android:id="@+id/txtAppName"
@@ -96,7 +100,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtFollowUs" />
 
 
-            <com.google.android.material.button.MaterialButton
+            <!--<com.google.android.material.button.MaterialButton
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -107,7 +111,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgTelegram"
                 app:layout_constraintVertical_bias="0.1" />
-
+-->
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"

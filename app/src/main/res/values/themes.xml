@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="BaseTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme" parent="BaseTheme" />
+
+    <style name="AppTheme.Splash" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
+
+    <style name="BaseBottomSheetDialog" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog" />
+
+</resources>

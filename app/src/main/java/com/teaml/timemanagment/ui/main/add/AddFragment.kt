@@ -21,6 +21,7 @@ import com.teaml.timemanagment.databinding.FragmentAddBinding
 import com.teaml.timemanagment.ui.base.BaseFragment
 import com.teaml.timemanagment.utils.extension.observe
 import com.teaml.timemanagment.utils.extension.obtainViewModel
+import kotlinx.android.synthetic.main.toolbar.view.*
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -60,11 +61,6 @@ class AddFragment : BaseFragment<FragmentAddBinding, AddViewModel>() {
     }
 
     private fun setup() {
-        // setup navigation controller
-        val appCompatActivity = activity as AppCompatActivity
-        appCompatActivity.setSupportActionBar(binding.toolbar)
-        appCompatActivity.setupActionBarWithNavController(findNavController())
-
 
         val priorityAdapter = ArrayAdapter.createFromResource(
             context!!,
@@ -91,6 +87,12 @@ class AddFragment : BaseFragment<FragmentAddBinding, AddViewModel>() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        // setup navigation controller
+        val appCompatActivity = activity as AppCompatActivity
+        appCompatActivity.setSupportActionBar(binding.toolbarLayout.toolbar)
+        appCompatActivity.setupActionBarWithNavController(findNavController())
+
+
         subscribe()
     }
 

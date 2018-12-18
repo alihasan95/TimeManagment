@@ -1,18 +1,10 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="BaseTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <!-- Bottom Sheet Dialog  Style -->
+    <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet_dialog_fragment</item>
     </style>
 
-    <style name="AppTheme" parent="BaseTheme" />
-
-    <style name="AppTheme.Splash" parent="AppTheme">
-        <item name="android:windowBackground">@drawable/splash_background</item>
-    </style>
 
     <style name="ExtendedFabStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton">
         <item name="android:paddingStart">20dp</item>
@@ -26,7 +18,7 @@
     <style name="CommunicationIconStyle">
         <item name="android:layout_height">32dp</item>
         <item name="android:layout_width">32dp</item>
-        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginTop">16dp</item>
     </style>
 
 </resources>

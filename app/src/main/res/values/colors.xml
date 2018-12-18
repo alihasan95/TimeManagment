@@ -12,4 +12,6 @@
     <color name="colorPriorityNormal">#FABD03</color>
     <color name="colorPriorityLow">#F18A81</color>
 
+    <color name="colorDivider">#19000000</color>
+
 </resources>

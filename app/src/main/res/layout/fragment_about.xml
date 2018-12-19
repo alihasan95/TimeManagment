@@ -7,7 +7,7 @@
 
         <import type="java.lang.String" />
 
-        <import type="com.teaml.mytask.BuildConfig" />
+        <import type="com.teaml.mytasks.BuildConfig" />
 
         <variable
             name="buildConfig"
@@ -15,7 +15,7 @@
 
         <variable
             name="viewModel"
-            type="com.teaml.mytask.ui.main.about.AboutViewModel" />
+            type="com.teaml.mytasks.ui.main.about.AboutViewModel" />
     </data>
 
     <ScrollView

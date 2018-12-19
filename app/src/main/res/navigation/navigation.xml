@@ -7,7 +7,7 @@
 
     <fragment
             android:id="@+id/homeFragment"
-            android:name="com.teaml.mytask.ui.main.home.HomeFragment"
+            android:name="com.teaml.mytasks.ui.main.home.HomeFragment"
             android:label=" "
             tools:layout="@layout/fragment_home">
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.teaml.mytask.ui.main.add.AddFragment"
+        android:name="com.teaml.mytasks.ui.main.add.AddFragment"
         android:label=" "
         tools:layout="@layout/fragment_add">
         <argument
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.teaml.mytask.ui.main.about.AboutFragment"
+        android:name="com.teaml.mytasks.ui.main.about.AboutFragment"
         android:label=" "
         tools:layout="@layout/fragment_about"/>
 </navigation>

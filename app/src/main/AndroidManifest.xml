@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.teaml.mytask">
+    package="com.teaml.mytasks">
 
     <application
         android:allowBackup="true"
-        android:name="com.teaml.mytask.TaskApp"
+        android:name="com.teaml.mytasks.TaskApp"
         android:icon="@mipmap/ic_launcher_dark"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_dark"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.teaml.mytask.ui.splash.SplashActivity"
+        <activity android:name="com.teaml.mytasks.ui.splash.SplashActivity"
         android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,10 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.teaml.mytask.ui.main.MainActivity"
+        <activity android:name="com.teaml.mytasks.ui.main.MainActivity"
             android:configChanges="keyboardHidden|keyboard"
-            android:windowSoftInputMode="adjustPan"
-            />
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>

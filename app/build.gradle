@@ -15,7 +15,7 @@ allOpen {
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId = "com.teaml.mytask"
+        applicationId = "com.teaml.mytasks"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode = 1

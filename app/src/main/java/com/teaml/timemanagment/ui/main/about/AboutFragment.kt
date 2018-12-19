@@ -34,9 +34,10 @@ class AboutFragment : BaseFragment<FragmentAboutBinding, AboutViewModel>() {
         super.onActivityCreated(savedInstanceState)
 
         // setup navigation controller
-        val appCompatActivity = activity as AppCompatActivity
-        appCompatActivity.setSupportActionBar(binding.toolbarLayout.toolbar)
-        appCompatActivity.setupActionBarWithNavController(findNavController())
+        baseActivity?.apply {
+            setSupportActionBar(binding.toolbarLayout.toolbar)
+            setupActionBarWithNavController(findNavController())
+        }
 
         observe(aboutViewModel.linksLiveData) { link ->
             link?.let { baseActivity?.browse(link, true) }

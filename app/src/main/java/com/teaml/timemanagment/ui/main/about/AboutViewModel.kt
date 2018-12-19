@@ -18,9 +18,6 @@ class AboutViewModel @Inject constructor() : BaseViewModel() {
     fun onFacebookIconClick() {
         _linksLiveData.value = AppConstants.FACEBOOK_PAGE_LINK
     }
-    
-    fun onGithubButtonClick() {
-        _linksLiveData.value = AppConstants.SOURCE_CODE_LINK
-    }
+
 
 }

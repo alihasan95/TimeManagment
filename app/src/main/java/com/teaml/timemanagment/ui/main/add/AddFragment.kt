@@ -88,10 +88,10 @@ class AddFragment : BaseFragment<FragmentAddBinding, AddViewModel>() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         // setup navigation controller
-        val appCompatActivity = activity as AppCompatActivity
-        appCompatActivity.setSupportActionBar(binding.toolbarLayout.toolbar)
-        appCompatActivity.setupActionBarWithNavController(findNavController())
-
+        baseActivity?.apply {
+            setSupportActionBar(binding.toolbarLayout.toolbar)
+            setupActionBarWithNavController(findNavController())
+        }
 
         subscribe()
     }

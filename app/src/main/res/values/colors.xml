@@ -11,6 +11,7 @@
     <color name="colorPriorityHigh">#FFF476</color>
     <color name="colorPriorityNormal">#FABD03</color>
     <color name="colorPriorityLow">#F18A81</color>
+    <color name="ic_launcher_background_test">#FFFFFF</color>
 
     <color name="colorDivider">#19000000</color>
 

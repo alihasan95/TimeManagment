@@ -45,9 +45,7 @@ class BottomNavigationDrawerDialogFragment : RoundedBottomSheetDialogFragment() 
                     true
                 )}
             }
-
             NavigationUI.onNavDestinationSelected(menuItem, findNavController())
-
         }
     }
 

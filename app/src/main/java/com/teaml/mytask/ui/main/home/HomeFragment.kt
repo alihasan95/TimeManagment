@@ -56,8 +56,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         // setup navigation controller
-        baseActivity?.setSupportActionBar(binding.bar)
-
+        //baseActivity?.setSupportActionBar(binding.bar)
 
         binding.bar.setNavigationOnClickListener { homeViewModel.onNavigationClick() }
 

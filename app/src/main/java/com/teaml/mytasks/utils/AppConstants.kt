@@ -8,6 +8,6 @@ object AppConstants {
     // Link
     const val FACEBOOK_PAGE_LINK = "https://www.facebook.com/Team-L-1755788901371765"
     const val TELEGRAM_CHANNEL = "https://t.me/team_l_developers"
-    const val SOURCE_CODE_LINK = "https://github.com/alihasan95/my-task-app"
+    const val SOURCE_CODE_LINK = "https://github.com/alihasan95/my-tasks-app"
 
 }

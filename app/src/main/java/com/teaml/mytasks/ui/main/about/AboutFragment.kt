@@ -41,5 +41,4 @@ class AboutFragment : BaseFragment<FragmentAboutBinding, AboutViewModel>() {
             link?.let { baseActivity?.browse(link, true) }
         }
     }
-
 }

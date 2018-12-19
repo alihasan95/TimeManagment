@@ -1,4 +1,4 @@
-package com.teaml.timemanagment.ui.main.homemenu
+package com.teaml.timemanagment.ui.main.bottomsheet
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,10 +12,12 @@ import com.teaml.timemanagment.ui.base.RoundedBottomSheetDialogFragment
 import com.teaml.timemanagment.utils.AppConstants
 import org.jetbrains.anko.browse
 
-class BottomNavigationViewDialogFragment : RoundedBottomSheetDialogFragment() {
+class BottomNavigationDrawerDialogFragment : RoundedBottomSheetDialogFragment() {
 
     companion object {
-        val TAG: String = BottomNavigationViewDialogFragment::class.java.simpleName
+        val TAG: String = BottomNavigationDrawerDialogFragment::class.java.simpleName
+
+        fun newInstance() = BottomNavigationDrawerDialogFragment()
     }
 
     private lateinit var binding: FragmentBottomNavigationDrawerBinding
@@ -36,8 +38,7 @@ class BottomNavigationViewDialogFragment : RoundedBottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.navigationView.setNavigationItemSelectedListener { menuItem ->
-
-
+            dismiss()
             when(menuItem.itemId) {
                 R.id.action_view_source_code -> { activity?.browse(
                     AppConstants.SOURCE_CODE_LINK,
@@ -45,7 +46,6 @@ class BottomNavigationViewDialogFragment : RoundedBottomSheetDialogFragment() {
                 )}
             }
 
-            dismiss()
             NavigationUI.onNavDestinationSelected(menuItem, findNavController())
 
         }

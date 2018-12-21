@@ -2,7 +2,7 @@
 <p align="center"><img src="https://lh3.googleusercontent.com/lUmKb3zC9J8RAlcuydah5oh_mNbTgs8OBAZ2qmFciPkcp4cQFVDKLNhCSLL2VITxJvA=s180-rw" width="150"></p> 
 <h2 align="center"><b>My Tasks</b></h2>
 <h4 align="center">Help you get tasks done—faster, Take control of your task management, Start easily managing your to-do list</h4>
-<p align="center"><a href="https://play.google.com/store/apps/details?id=com.teaml.mytasks"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="80"></a></p> 
+<p align="center"><a href="https://play.google.com/store/apps/details?id=com.teaml.mytasks" target="_aboutblank"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="80"></a></p> 
 
 ## Screenshots
 

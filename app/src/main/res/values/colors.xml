@@ -14,5 +14,5 @@
     <color name="ic_launcher_background_test">#FFFFFF</color>
 
     <color name="colorDivider">#19000000</color>
-
+    <color name="colorSwipeBackground">#1E8D3E</color>
 </resources>

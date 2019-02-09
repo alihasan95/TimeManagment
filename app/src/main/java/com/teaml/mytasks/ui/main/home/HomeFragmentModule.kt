@@ -1,5 +1,6 @@
 package com.teaml.mytasks.ui.main.home
 
+import android.content.Context
 import dagger.Module
 import dagger.Provides
 
@@ -7,9 +8,9 @@ import dagger.Provides
 class HomeFragmentModule {
 
     @Provides
-    fun provideRvHomeAdapter(): RvHomeAdapter {
+    fun provideRvHomeAdapter(context: Context): RvHomeAdapter {
         //val list = mutableListOf(Task(1, "first task", Priority.HIGH))
         //return RvHomeAdapter(list)
-        return RvHomeAdapter(mutableListOf())
+        return RvHomeAdapter(context, mutableListOf())
     }
 }

@@ -6,7 +6,7 @@ import com.teaml.mytasks.ui.base.BaseViewModel
 import com.teaml.mytasks.utils.SingleLiveEvent
 import javax.inject.Inject
 
-class HomeViewModel @Inject constructor(repository: TaskRepository) : BaseViewModel() {
+class HomeViewModel @Inject constructor(private val repository: TaskRepository) : BaseViewModel() {
 
     private val _onAddTaskClickEvent = SingleLiveEvent<Any>()
     val onAddTaskClickEvent: LiveData<Any> =
@@ -27,4 +27,7 @@ class HomeViewModel @Inject constructor(repository: TaskRepository) : BaseViewMo
         _onNavigationClickEvent.call()
     }
 
+    fun deleteTask(taskId: Int) {
+        repository.deleteTask(taskId)
+    }
 }

@@ -2,18 +2,23 @@ package com.teaml.mytasks.ui.main.home
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.teaml.mytasks.BR
 import com.teaml.mytasks.R
 import com.teaml.mytasks.databinding.FragmentHomeBinding
+import com.teaml.mytasks.helper.SwipeToDeleteCallback
 import com.teaml.mytasks.ui.base.BaseFragment
 import com.teaml.mytasks.ui.main.bottomsheet.BottomNavigationDrawerDialogFragment
 import com.teaml.mytasks.utils.SpaceItemDecoration
 import com.teaml.mytasks.utils.extension.observe
 import com.teaml.mytasks.utils.extension.obtainViewModel
+import kotlinx.android.synthetic.main.fragment_bottom_navigation_drawer.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
 import javax.inject.Inject
 
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
@@ -40,6 +45,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
         binding.recyclerView.layoutManager = LinearLayoutManager(context!!)
         binding.recyclerView.adapter = adapter
+        val itemTouchHelper = ItemTouchHelper(SwipeToDeleteCallback(adapter))
+        itemTouchHelper.attachToRecyclerView(binding.recyclerView)
 
 
         binding.recyclerView.addItemDecoration(SpaceItemDecoration())
@@ -52,6 +59,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
             findNavController().navigate(actionHomeFragmentToAddFragment)
         }
 
+        adapter.setOnItemSwipeListener {
+            homeViewModel.deleteTask(it)
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
